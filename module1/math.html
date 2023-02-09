@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taller de Matemáticas con JavaScript</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+Math&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="main-container">
+    <h1 class="main__title">Taller de Matemáticas con JavaScript</h1>
+    <p class="main__text">
+      Por favor, selecciona el tipo de figura geométrica para calcular su área y perímetro según sus características:
+    </p>
+    <fieldset class="main__fieldtext">
+      <legend>Selecciona el tipo de figura geométrica:</legend>
+      <div class="main__fieldtext-option">
+        <input type="radio" name="geometricFigure" id="rectangle" value="rectangle" checked>
+        <label for="rectangle">Rectángulo</label>
+      </div>
+      <div class="main__fieldtext-option">
+        <input type="radio" name="geometricFigure" id="circle" value="circle">
+        <label for="circle">Círculo</label>
+      </div>
+      <div class="main__fieldtext-option">
+        <input type="radio" name="geometricFigure" id="triangle" value="triangle">
+        <label for="triangle">Triángulo</label>
+      </div>
+    </fieldset>
+    <div class="division"></div>
+    <section class="section rectangle-section">
+      <h2 class="section__title rectangle-section__title">Calcular los datos de un rectángulo apartir de la base y altura</h2>
+      <p class="section__disclaimer rectangle-section__disclaimer">El cuadrado es un caso especial de rectángulo en el cual la base (<i>b</i>) es igual a la altura (<i>a</i>).</p>
+      <div class="auxiliar-section">
+        <fieldset class="section__input-values rectangle-section__input-values">
+          <legend>Datos del rectángulo</legend>
+          <div class="section__data-segment">
+            <label for="baseRectangle">Por favor ingresa el valor de la <strong>base (<i>b</i>)</strong> del rectángulo: </label>
+            <input type="number" name="base" id="baseRectangle" min="1" max="100" placeholder="e.g. 5" step="0.1">
+          </div>
+          <div class="section__data-segment">
+            <label for="heightRectangle">Por favor ingresa el valor de la <strong>altura (<i>a</i>)</strong> del rectángulo: </label>
+            <input type="number" name="height" id="heightRectangle" min="1" max="100" placeholder="e.g. 5.1" step="0.1">
+          </div>
+        </fieldset>
+        <fieldset class="section__output-values">
+          <legend>Valores calculados del rectángulo</legend>
+          <div class="output-values rectangle-section__output-values">
+            <figure>
+              <img src="https://www.neurochispas.com/wp-content/uploads/2021/03/propiedades-de-los-rectangulos.png" alt="Rectángulo">
+            </figure>
+            <p>Base (b) = <span id="displayBaseRectangle">0</span> u</p>
+            <p>Altura (a) = <span id="displayHeightRectangle">0</span> u</p>
+            <p>Perímetro (P) = <span id="perimeterRectangle">0</span> u</p>
+            <p>Área (A) = <span id="areaRectangle">0</span> u<sup>2</sup></p>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+    <section class="section circle-section inactive">
+      <h2 class="section__title circle-section__title">Calcular los datos de un círculo apartir de su radio</h2>
+      <p class="section__disclaimer circle-section__disclaimer">El perímetro de una círculo también se conoce como <i>circunferencia</i>.</p>
+      <div class="auxiliar-section">
+        <fieldset class="section__input-values circle-section__input-values">
+          <legend>Datos del círculo</legend>
+          <div class="section__data-segment">
+            <label for="radiusCircle">Por favor ingresa el valor del <strong>radio (<i>r</i> )</strong> del círculo: </label>
+            <input type="number" name="radio" id="radiusCircle" min="1" max="100" placeholder="e.g. 5" step="0.1">
+          </div>
+        </fieldset>
+        <fieldset class="section__output-values circle-section__output-values">
+          <legend>Valores calculados del circulo</legend>
+          <div class="output-values circle-section__output-values--color">
+            <figure>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Partes_Circulo.svg/768px-Partes_Circulo.svg.png" alt="Círculo">
+            </figure>
+            <p>Radio (r) = <span id="displayRadiusCircle">0</span> u</p>
+            <p>Diámetro (D) = <span id="displayDiameterCircle">0</span> u</p>
+            <p>Perímetro (P) = <span id="perimeterCircle">0</span> u</p>
+            <p>Área (A) = <span id="areaCircle">0</span> u<sup>2</sup></p>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+    <section class="section triangle-section inactive">
+      <h2 class="section__title triangle-section__title">Calcular los datos de un triángulo apartir de sus lados</h2>
+      <p class="section__disclaimer circle-section__disclaimer">Esta herramienta permite calcular el área de cualquier triángulo siempre y cuando cumpla la propiedad de la <a href="https://www.universoformulas.com/matematicas/geometria/triangulo/#desigualdad-triangular"><i>desigualdad triángular</i></a><br><br>EL lado b (<i>b</i>) del triángulo se considera como la <i>base b</i> del triángulo para calcular la altura <i>h</i>.</p>
+      <div class="auxiliar-section">
+        <fieldset class="section__input-values triangle-section__input-values">
+          <legend>Datos del triángulo</legend>
+          <div class="section__data-segment">
+            <label for="aTriangle">Por favor ingresa el valor del <strong>lado a (<i>a</i> )</strong> del triángulo: </label>
+            <input type="number" name="sideA" id="aTriangle" min="1" max="100" placeholder="e.g. 5" step="0.1">
+          </div>
+          <div class="section__data-segment">
+            <label for="bTriangle">Por favor ingresa el valor de la <strong>base (<i>b</i>)</strong> o el <strong>lado b <br>(<i>b</i> )</strong> del triángulo: </label>
+            <input type="number" name="sideB" id="bTriangle" min="1" max="100" placeholder="e.g. 5" step="0.1">
+          </div>
+          <div class="section__data-segment">
+            <label for="cTriangle">Por favor ingresa el valor del <strong>lado c (<i>c</i> )</strong> del triángulo: </label>
+            <input type="number" name="sideC" id="cTriangle" min="1" max="100" placeholder="e.g. 5" step="0.1">
+          </div>
+          <div id="triangleWarning" class="section__data-segment inactive">
+            <p class="section__disclaimer triangle-section__disclaimer">Los valores ingresados no corresponden a un triángulo válido. Para calcular el área de cualquier triángulo se debe cumplir la propiedad de la <a href="https://www.universoformulas.com/matematicas/geometria/triangulo/#desigualdad-triangular"><i>desigualdad triángular</i></a>.</p>
+          </div>
+        </fieldset>
+        <fieldset class="section__output-values triangle-section__output-values">
+          <legend>Valores calculados del triángulo</legend>
+          <div class="output-values triangle-section__output-values--color">
+            <figure>
+              <img src="https://www.lifeder.com/wp-content/uploads/2018/07/Tri%C3%A1ngulo-Escaleno-7-e1532544061588.jpg" alt="Triángulo">
+            </figure>
+            <p>Lado a (a) = <span id="displayATriangle">0</span> u</p>
+            <p>Base (b) ó Lado b (b) = <span id="displayBTriangle">0</span> u</p>
+            <p>Lado c (c) = <span id="displayCTriangle">0</span> u</p>
+            <p>Altura (h) = <span id="heightTriangle">0</span> u</p>
+            <p>Perímetro (P) = <span id="perimeterTriangle">0</span> u</p>
+            <p>Área (A) = <span id="areaTriangle">0</span> u<sup>2</sup></p>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+  </main>
+  <script src="./mathFigures.js"></script>
+</body>
+</html>

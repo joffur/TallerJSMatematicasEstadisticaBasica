@@ -1,0 +1,287 @@
+/* Reset initial styles*/
+:root {
+  --primary-bg: #F2FFF8;
+  --secondary-bg: #D9BCB8;
+  --primary: #4C6759;
+  --secondary: #5F7268;
+  --terciary: #533734;
+
+}
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 62.5%;
+  line-height: 1.5;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  background-color: var(--primary-bg);
+  
+}
+
+/* main section */
+.main-container {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.6rem;
+  background-color: var(--primary-bg);
+  color: var(--secondary);
+}
+.main__title {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--primary-bg);
+  color: var(--primary);
+}
+.main__text {
+  padding: 10px 0;
+}
+.main__fieldtext {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border-color: var(--secondary);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.main__fieldtext-option {
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+}
+.main__fieldtext-option input {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary);
+  transition: 0.2s all linear;
+  margin-right: 5px;
+}
+.main__fieldtext-option input:checked {
+  border: 6px solid var(--primary);
+}
+.division {
+  width: 90%;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+/* Section styles */
+.section {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+}
+.section__title {
+  width: 100%;
+  text-align: center;
+  color: var(--primary);
+}
+.section__disclaimer {
+  width: 90%;
+  max-width: 300px;
+  padding: 10px 5px;
+  text-align: center;
+  background-color: var(--secondary-bg);
+  font-size: 1.2rem;
+  color: var(--terciary);
+  border: 0.15rem solid darkred;
+  border-radius: 30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  animation: 1s ease-in-out infinite normal both pulse;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.auxiliar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.section__input-values {
+  padding: 0 20px 20px;
+  border-radius: 20px;
+  border-color: var(--secondary);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.main__fieldtext legend,
+.section__input-values legend,
+.section__output-values legend {
+  text-align: center;
+  font-weight: bold;
+  border: 0.2rem solid var(--secondary);
+  border-radius: 10px;
+  padding: 0 10px;
+  color: var(--primary-bg);
+  background-color: var(--primary);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.section__data-segment {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--secondary);
+}
+.section__data-segment input {
+  padding: 5px 0 5px 10px;
+  border-radius: 20px;
+  background-color: white;
+}
+.section__output-values {
+  width: 310px;
+  height: 300px;
+  padding: 20px 20px;
+  border-radius: 20px;
+  border-color: var(--secondary);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.output-values {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.output-values figure {
+  width: 100%;
+  position: absolute;
+  margin: 0 auto;
+}
+.output-values img {
+  width: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+.output-values p {
+  padding-top: 5px;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: serif;
+  font-style: italic;
+  color: #0000EE;
+}
+
+/* Rectangle section */
+.rectangle-section__output-values p {
+  width: 100%;
+  position: absolute;
+  margin: 0 auto;
+}
+.rectangle-section__output-values p:nth-child(2) {
+  top: 55px;
+}
+.rectangle-section__output-values p:nth-child(3) {
+  top: 75px;
+}
+.rectangle-section__output-values p:nth-child(4) {
+  top: 95px;
+}
+.rectangle-section__output-values p:nth-child(5) {
+  top: 115px;
+}
+
+/* Circle section */
+.circle-section__output-values {
+  height: 350px;
+}
+.circle-section__output-values--color p {
+  color: var(--primary);
+}
+.circle-section__output-values--color p {
+  width: 100%;
+  position: absolute;
+  margin: 0 auto;
+}
+.circle-section__output-values--color p:nth-child(2) {
+  top: 15px;
+  color: red;
+}
+.circle-section__output-values--color p:nth-child(3) {
+  top: 40px;
+  left: -15px;
+  color: #0000EE;
+}
+.circle-section__output-values--color p:nth-child(4) {
+  top: 160px;
+  left: 30px;
+}
+.circle-section__output-values--color p:nth-child(5) {
+  top: 185px;
+}
+
+/* Triangle section */
+.triangle-section__output-values--color p {
+  color: var(--primary);
+}
+.triangle-section__output-values--color p {
+  width: 100%;
+  position: absolute;
+  margin: 0 auto;
+}
+.triangle-section__output-values--color p:nth-child(2) {
+  top: 20px;
+  left: -80px;
+}
+.triangle-section__output-values--color p:nth-child(3) {
+  top: 135px;
+}
+.triangle-section__output-values--color p:nth-child(4) {
+  top: -20px;
+  left: 80px;
+}
+.triangle-section__output-values--color p:nth-child(5) {
+  top: 80px;
+  left: -20px;
+}
+.triangle-section__output-values--color p:nth-child(6) {
+  top: 170px;
+}
+.triangle-section__output-values--color p:nth-child(7) {
+  top: 190px;
+}
+.triangle-section__disclaimer {
+  color: #706829;
+  background-color: #F9F91F;
+  border-color: #8C7411;
+  align-self: center;
+}
+
+/* Auxiliar styles */
+.inactive {
+  opacity: 0;
+  display: none;
+  transition: all 0.5s;
+}
+
+/* media queries */
+@media (min-width: 769px) {
+  .auxiliar-section {
+    flex-direction: row;
+    gap: 20px;
+  }
+  .triangle-section__output-values {
+    width: 310px;
+  }
+}
