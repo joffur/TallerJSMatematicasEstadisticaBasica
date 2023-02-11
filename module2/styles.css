@@ -1,0 +1,113 @@
+/* Reset initial styles */
+:root {
+  --primary: #40246B;
+  --secondary: #573C8A;
+  --terciary: #53456B;
+  --primary-bg: #F3DFEE;
+  --secondary-bg: #D3B6F0;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+  font-family: monospace, sans-serif;
+}
+body {
+  background-color: var(--primary-bg);
+}
+
+/* Main section */
+.main-container {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.6rem;
+  background-color: var(--primary-bg);
+  color: var(--secondary);
+}
+.main__title {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--primary-bg);
+  color: var(--primary);
+}
+.main__text {
+  padding: 10px 0;
+  text-align: justify;
+}
+
+/* Product discount section */
+.product-discount {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border-radius: 40px;
+  background-color: var(--secondary-bg);
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.product-discount__container {
+  /* width: 90%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90%;
+}
+.product-discount__container input {
+  display: inline-block;
+  width: 100px;
+  max-width: 200px;
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 15px;
+  text-align: center;
+  outline: none;
+  transition: all 0.6s ease;
+}
+.product-discount__container input:focus {
+  width: 100%;
+  border-color: var(--terciary);
+}
+.product-discount__result {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+.animated {
+  background-color: var(--primary-bg);
+  border: 2px solid var(--terciary);
+  padding: 10px 20px;
+  border-radius: 20px;
+  animation: 1.5s linear infinite normal both pulse;
+}
+@keyframes pulse {
+  0% {
+    transform: skewX(0deg) scale(1.0);
+  }
+  25% {
+    transform: skewX(15deg) scale(1.1);
+  }
+
+  50% {
+    transform: skewX(0deg) scale(1.0);
+  }
+  75% {
+    transform: skewX(-15deg) scale(1.1);
+  }
+  100% {
+    transform: skewX(0deg) scale(1.0);
+  }
+}
