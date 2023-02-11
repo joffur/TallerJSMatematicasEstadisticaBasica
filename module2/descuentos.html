@@ -21,16 +21,37 @@
         <label class="product-discount__label-discount" for="discount">Descuento de tu producto:</label>
         <input class="product-discount__input-discount" type="number" id="discount">
       </div>
-      <!-- <button id="calculate">Calcular descuento</button> -->
       <div id="result-container" class="product-discount__container">
         <p class="product-discount__result" id="result"></p>
       </div>
     </section>
     <section class="coupon-discount">
-
+      <h2>Cómo calcular descuentos con base en cupones</h2>
+      <p>
+        Para esta parte, se calcula el porcentaje de descuento con base a un cupón otorgado al cliente. Los cupones disponibles son:
+      </p>
+      <p class="coupon-discount__available">
+      </p>
+      <p>
+        Ingresar los valores <span>teniendo en cuenta las minúsculas y mayúsculas.</span></p>
+      </p>
+      <div class="coupon-discount__container">
+        <label for="price-2" class="coupon-discount__label-price">Precio original de tu producto:</label>
+        <input class="coupon-discount__input-price" type="number" id="price-2">
+      </div>
+      <div class="coupon-discount__container">
+        <label class="coupon-discount__label-discount" for="coupon">Cupón de descuento:</label>
+        <div class="coupon-discount__button-container">
+          <input class="coupon-discount__input-discount" type="text" id="coupon" placeholder="Código de descuento">
+          <button class="coupon-discount__btn" id="calculateCoupon">Aplicar</button>
+        </div>
+      </div>
+      <div id="coupon-result-container" class="coupon-discount__container">
+        <p class="coupon-discount__result" >Precio actual: <span id="coupon-result"></span></p>
+        <p>Precio con descuento:</p>
+      </div>
     </section>
   </main>
-
   
   <script src="./descuentos.js"></script>
 </body>
