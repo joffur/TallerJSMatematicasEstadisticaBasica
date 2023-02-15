@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platzimath</title>
+</head>
+<body>
+  <main class="main-container">
+    <h1 class="main-title">Platzimath</h1>
+    <p class="main__text">Esta herramienta permite calcular el promedio y mediana de un arreglo numérico. También se puede obtener la moda de un arreglo que contenga cualquier tipo de dato. Y finalmente, como reto se propone una herramienta para obtener el promedio ponderado de una asignatura.</p>
+    <section class="container">
+      <h2 class="container__title">Promedio (media aritmética) y mediana</h2>
+      <p class="container__text">
+        Se debe ingresar los valores numéricos de un arreglo separados por espacio. Por ejemplo, si se desea calcular el arreglo [1, 2, 3, 4] en el siguiente cuadro de texto se debe ingresar <strong>"1 2 3 4"</strong> sin las comillas y los valores separados por un solo espacio. Si se requiere ingresar un valor decimal <i>(Float o Punto flotante)</i> se debe ingresar el punto flotante como punto (1.2) y no cómo coma  <strike>(1,2)</strike>. 
+      </p>
+      <div class="container-elements">
+        <label for="array-input">Ingresar el arreglo numérico: </label>
+        <input id="array-input" type="text">
+        <div class="output-array">
+          <p>El arreglo al cual se le va a calcular el promedio y la mediana es el siguiente: <span id="array-output"></span></p>
+          <div class="output-array__container">
+            <p>Promedio: <span id="average-output"></span></p>
+            <p>Mediana: <span id="median-output"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="container">
+      <h2 class="container__title">Moda</h2>
+      <p class="container__text">
+        Se debe ingresar los valores de un arreglo separados por espacio. Por ejemplo, si se desea calcular el arreglo [1, 2, ab, a, perro, 0.12] en el siguiente cuadro de texto se debe ingresar <strong>"1 2 ab a perro 0.12"</strong> sin las comillas y los valores separados por un solo espacio. Si se requiere ingresar un valor decimal <i>(Float o Punto flotante)</i> se debe ingresar el punto flotante como punto (1.2) y no cómo coma  <strike>(1,2)</strike>. 
+      </p>
+      <div class="container-elements">
+        <label for="any-array-input">Ingresar el arreglo con datos: </label>
+        <input id="any-array-input" type="text">
+        <div class="output-array">
+          <p>El arreglo al cual se le va a calcular el promedio y la mediana es el siguiente: <span id="any-array-output"></span></p>
+          <div class="output-array__container">
+            <p>Moda: <span id="mode-output"></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./platzimath.js"></script>
+</body>
+</html>

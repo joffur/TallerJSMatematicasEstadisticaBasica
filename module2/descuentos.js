@@ -83,15 +83,12 @@ class Coupon {
     }
   }
   isValidCoupon() {
-    let coupons = Object.keys(this.coupons);
-    let isValid = false;
-    for (let i = 0; i < coupons.length; i++) {
-      if (coupons[i] === this.coupon) {
-        isValid = true;
-        break;
-      }
-    };
-    return isValid;
+    if (this.coupons[this.coupon]) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
   getCouponDiscount() {
     let valuediscountCoupon;
@@ -143,7 +140,7 @@ function displayPrice() {
     pCouponresult.innerText = 'CHANCLA! por favor diligencia el formulario con datos válidos';
   }
   else {
-    pCouponresult.innerText = price;
+    pCouponresult.innerText = "$" + price;
   }
 }
 
@@ -160,6 +157,6 @@ function calculatePriceWithCoupon() {
     pCouponresult2.innerText = 'Lo sentimos, el cupon ingresado no es válido';
   }
   else {
-    pCouponresult2.innerText = newCoupon.newPrice();
+    pCouponresult2.innerText = "$" + newCoupon.newPrice();
   }
 }
