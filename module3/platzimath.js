@@ -52,7 +52,7 @@ function sortBidimensionalList(arrayList) {
 
 function calculateAverage(list) {
   const accList = list.reduce((a,b) => a + b);
-  return accList / list.length;
+  return parseFloat(Number.parseFloat(accList / list.length).toFixed(3));
 }
 
 function calculateMedian(unsortedList) {
@@ -69,7 +69,7 @@ function calculateMedian(unsortedList) {
   else {
     median = list[indexMiddleListImpair];
   }
-  return median;
+  return parseFloat(Number.parseFloat(median).toFixed(3));
 }
 
 function calculateMode(list) {
@@ -95,7 +95,7 @@ function calculateMode(list) {
 function calculateRMS(list) {
   list = list.map((item) => Math.pow(item, 2));
   const accList = list.reduce((a, b) => a + b);
-  return Math.sqrt(accList / list.length);
+  return parseFloat(Number.parseFloat(Math.sqrt(accList / list.length)).toFixed(3));
 }
 
 arrayInput.addEventListener('input', calculateFirstSection);
