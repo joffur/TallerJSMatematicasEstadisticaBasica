@@ -5,6 +5,9 @@ const medianOutput = document.querySelector('#median-output');
 const anyArrayInput = document.querySelector('#any-array-input');
 const anyArrayOutput = document.querySelector('#any-array-output');
 const modeOutput = document.querySelector('#mode-output');
+const rmsArrayInput = document.querySelector('#rms-array-input');
+const rmsArrayOutput = document.querySelector('#rms-array-output');
+const rmsOutput = document.querySelector('#rms-output');
 
 function calculateFirstSection() {
   const arrayToCalculate = arrayInput.value.split(' ').map((item) => Number(item));
@@ -19,6 +22,13 @@ function calculateSecondSection() {
   const outputArray = anyArrayInput.value.split(' ').map((item) => " " + item);
   anyArrayOutput.innerText = '[' + outputArray + ' ]';
   modeOutput.innerText = calculateMode(arrayToCalculate);
+}
+
+function calculateThirdSection() {
+  const arrayToCalculate = rmsArrayInput.value.split(' ').map((item) => Number(item));
+  const outputArray = rmsArrayInput.value.split(' ').map((item) => " " + Number(item));
+  rmsArrayOutput.innerText = '[' + outputArray + ' ]';
+  rmsOutput.innerText = calculateRMS(arrayToCalculate);
 }
 
 function isPair(list) {
@@ -82,6 +92,13 @@ function calculateMode(list) {
   return listArraySorted[0][0];
 }
 
+function calculateRMS(list) {
+  list = list.map((item) => Math.pow(item, 2));
+  const accList = list.reduce((a, b) => a + b);
+  return Math.sqrt(accList / list.length);
+}
+
 arrayInput.addEventListener('input', calculateFirstSection);
 arrayInput.addEventListener('input', calculateFirstSection);
 anyArrayInput.addEventListener('input', calculateSecondSection);
+rmsArrayInput.addEventListener('input', calculateThirdSection);

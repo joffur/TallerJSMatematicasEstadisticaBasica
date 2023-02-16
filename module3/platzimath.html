@@ -5,44 +5,67 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Platzimath</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <main class="main-container">
-    <h1 class="main-title">Platzimath</h1>
-    <p class="main__text">Esta herramienta permite calcular el promedio y mediana de un arreglo numérico. También se puede obtener la moda de un arreglo que contenga cualquier tipo de dato. Y finalmente, como reto se propone una herramienta para obtener el promedio ponderado de una asignatura.</p>
-    <section class="container">
-      <h2 class="container__title">Promedio (media aritmética) y mediana</h2>
+    <h1 class="main__title">Platzimath</h1>
+    <p class="main__text">Esta herramienta permite calcular el promedio y mediana de un arreglo numérico. También se puede obtener la moda de un arreglo que contenga cualquier tipo de dato. Y finalmente, como reto se propone una herramienta para obtener la media cuadrática de un arreglo de valores.</p>
+    <fieldset class="container">
+      <legend class="container__title">Promedio (media aritmética) y mediana</legend>
       <p class="container__text">
-        Se debe ingresar los valores numéricos de un arreglo separados por espacio. Por ejemplo, si se desea calcular el arreglo [1, 2, 3, 4] en el siguiente cuadro de texto se debe ingresar <strong>"1 2 3 4"</strong> sin las comillas y los valores separados por un solo espacio. Si se requiere ingresar un valor decimal <i>(Float o Punto flotante)</i> se debe ingresar el punto flotante como punto (1.2) y no cómo coma  <strike>(1,2)</strike>. 
+        Se debe ingresar los valores numéricos de un arreglo separados por espacio. Por ejemplo, si se desea calcular el arreglo [1, 2, 3, 4] en el siguiente cuadro de texto se debe ingresar <strong>"1 2 3 4"</strong> sin las comillas y los valores separados por un solo espacio. Si se requiere ingresar un valor decimal <i>(Float o Punto flotante)</i> se debe ingresar el punto flotante como punto (1.2) y no cómo coma (<strike>1,2</strike>). 
       </p>
       <div class="container-elements">
         <label for="array-input">Ingresar el arreglo numérico: </label>
         <input id="array-input" type="text">
         <div class="output-array">
-          <p>El arreglo al cual se le va a calcular el promedio y la mediana es el siguiente: <span id="array-output"></span></p>
+          <p>El arreglo al cual se le va a calcular el promedio y la mediana es el siguiente:</p>
+          <span class="span-array" id="array-output"></span>
           <div class="output-array__container">
             <p>Promedio: <span id="average-output"></span></p>
             <p>Mediana: <span id="median-output"></span></p>
           </div>
         </div>
       </div>
-    </section>
-    <section class="container">
-      <h2 class="container__title">Moda</h2>
+    </fieldset>
+    <fieldset class="container">
+      <legend class="container__title">Moda</legend>
       <p class="container__text">
-        Se debe ingresar los valores de un arreglo separados por espacio. Por ejemplo, si se desea calcular el arreglo [1, 2, ab, a, perro, 0.12] en el siguiente cuadro de texto se debe ingresar <strong>"1 2 ab a perro 0.12"</strong> sin las comillas y los valores separados por un solo espacio. Si se requiere ingresar un valor decimal <i>(Float o Punto flotante)</i> se debe ingresar el punto flotante como punto (1.2) y no cómo coma  <strike>(1,2)</strike>. 
+        Se debe ingresar los valores de un arreglo separados por espacio. Por ejemplo, si se desea calcular el arreglo [1, 2, ab, a, perro, 0.12] en el siguiente cuadro de texto se debe ingresar <strong>"1 2 ab a perro 0.12"</strong> sin las comillas y los valores separados por un solo espacio. Si se requiere ingresar un valor decimal <i>(Float o Punto flotante)</i> se debe ingresar el punto flotante como punto (1.2) y no cómo coma (<strike>1,2</strike>). 
       </p>
       <div class="container-elements">
         <label for="any-array-input">Ingresar el arreglo con datos: </label>
         <input id="any-array-input" type="text">
         <div class="output-array">
-          <p>El arreglo al cual se le va a calcular el promedio y la mediana es el siguiente: <span id="any-array-output"></span></p>
+          <p>El arreglo al cual se le va a calcular el promedio y la mediana es el siguiente:</p>
+          <span class="span-array" id="any-array-output"></span>
           <div class="output-array__container">
             <p>Moda: <span id="mode-output"></span></p>
           </div>
         </div>
       </div>
-    </section>
+    </fieldset>
+    <fieldset class="container">
+      <legend class="container__title">Media cuadrática (RMS)</legend>
+      <p class="container__text">
+        Se debe ingresar los valores de un arreglo separados por espacio. Por ejemplo, si se desea calcular el arreglo [0.94, -0.42, 0.51, 1.29, -0.95] en el siguiente cuadro de texto se debe ingresar <strong>"0.94 -0.42 0.51 1.29 -0.95"</strong> sin las comillas y los valores separados por un solo espacio. Si se requiere ingresar un valor decimal <i>(Float o Punto flotante)</i> se debe ingresar el punto flotante como punto (1.2) y no cómo coma (<strike>1,2</strike>).<br><br>Esta herramienta utiliza la fórmula expresada en (1). Para conocer más información de esta medida, se puede consultar el siguiente enlace <a href="https://es.wikipedia.org/wiki/Media_cuadr%C3%A1tica">Media cuadrática</a>
+      </p>
+      <figure>
+        <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ae6eb0857eee5544af02d275f716b35c13e2dfb3" alt="Fórmula de la media cuadrática para una variable discreta">
+      </figure>
+      <div class="container-elements">
+        <label for="rms-array-input">Ingresar el arreglo numérico:</label>
+        <input id="rms-array-input" type="text">
+        <div class="output-array">
+          <p>El arreglo al cual se le va a calcular el promedio y la mediana es el siguiente:</p>
+          <span class="span-array" id="rms-array-output"></span>
+          <div class="output-array__container">
+            <p>RMS: <span id="rms-output"></span></p>
+          </div>
+        </div>
+      </div>
+    </fieldset>
   </main>
   <script src="./platzimath.js"></script>
 </body>
