@@ -1,3 +1,5 @@
+const Analisis = {};
+
 const empresas = {};
 
 for (const persona of salarios) {
@@ -14,14 +16,14 @@ for (const persona of salarios) {
   }
 }
 
-console.log({empresas});
+Analisis.empresas = empresas;
 
-function findPerson(personInSearch) {
+Analisis.findPerson = function findPerson(personInSearch) {
   return salarios.find(person => person.name == personInSearch);
 }
 
-function medianPerPerson(namePerson) {
-  const works = findPerson(namePerson).trabajos;
+Analisis.medianPerPerson = function medianPerPerson(namePerson) {
+  const works = this.findPerson(namePerson).trabajos;
   const salaries = works.map((element) => {
     return element.salario;
   });
@@ -29,8 +31,8 @@ function medianPerPerson(namePerson) {
   return media;
 }
 
-function personProjection(namePerson) {
-  const works = findPerson(namePerson).trabajos;
+Analisis.personProjection = function personProjection(namePerson) {
+  const works = this.findPerson(namePerson).trabajos;
 
   let growthPercentages = [];
 
@@ -50,7 +52,7 @@ function personProjection(namePerson) {
   return newSalary;
 }
 
-function medianEnterprise(nameEnterprise, searchYear) {
+Analisis.medianEnterprise = function medianEnterprise(nameEnterprise, searchYear) {
   if (!empresas[nameEnterprise]) {
     console.warn('La empresa buscada no existe');
     return;
@@ -64,7 +66,7 @@ function medianEnterprise(nameEnterprise, searchYear) {
   }
 }
 
-function enterpriseProjection(nameEnterprise) {
+Analisis.enterpriseProjection = function enterpriseProjection(nameEnterprise) {
   if (!empresas[nameEnterprise]) {
     console.warn('La empresa buscada no existe');
   }
@@ -92,7 +94,7 @@ function enterpriseProjection(nameEnterprise) {
   }
 }
 
-function medianGeneral() {
+Analisis.medianGeneral = function medianGeneral() {
   const medianList = salarios.map(
     item => medianPerPerson(item.name
   ));
@@ -101,7 +103,7 @@ function medianGeneral() {
   return median;
 }
 
-function medianTop10() {
+Analisis.medianTop10 = function medianTop10() {
   const medianList = salarios.map(
     item => medianPerPerson(item.name
   )).sort((a,b) => b - a);
