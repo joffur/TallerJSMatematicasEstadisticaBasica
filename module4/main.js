@@ -14,9 +14,9 @@ salarios.forEach(item => {
   const option = document.createElement('option');
   option.innerText = item.name;
   option.value = item.name;
-  personSelect.append(option);
+  personDatalist.append(option);
 });
-personSection.append(personSelect);
+personSection.append(personLabel, personDatalist);
 
 const chartContainer = document.createElement('div');
 chartContainer.setAttribute('id', 'chartContainer');
@@ -51,7 +51,7 @@ enterpriseSelect.addEventListener('change', selectEnterprise);
 
 // Personas
 function selectPerson() {
-  const namePerson = personSelect.value;
+  const namePerson = personDatalist.value;
   const dataPerson = getDataPerson(namePerson);
   renderChartPerson(dataPerson);
 } 
