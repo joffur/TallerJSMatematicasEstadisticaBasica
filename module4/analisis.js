@@ -17,6 +17,7 @@ for (const persona of salarios) {
 }
 
 Analisis.empresas = empresas;
+// console.log(Analisis.empresas);
 
 Analisis.findPerson = function findPerson(personInSearch) {
   return salarios.find(person => person.name == personInSearch);
@@ -66,16 +67,24 @@ Analisis.medianEnterprise = function medianEnterprise(nameEnterprise, searchYear
   }
 }
 
-Analisis.enterpriseProjection = function enterpriseProjection(nameEnterprise) {
+Analisis.enterpriseProjection = function enterpriseProjection(nameEnterprise, median) {
   if (!empresas[nameEnterprise]) {
     console.warn('La empresa buscada no existe');
   }
   else {
     const enterpriseYears = Object.keys(empresas[nameEnterprise]);
-    const listMedianYears = enterpriseYears.map((year) => {
-      return medianEnterprise(nameEnterprise, year)
-    })
-
+    let listMedianYears;
+    if (median) {
+      listMedianYears = enterpriseYears.map((year) => {
+        return this.medianEnterprise(nameEnterprise, year)
+      })  
+    }
+    else {
+      listMedianYears = enterpriseYears.map((year) => {
+        return empresas[nameEnterprise][year].reduce((acc,item) => acc + item, 0);
+      });
+    }
+    
     let growthPercentages = [];
 
     for (let i = 1; i < listMedianYears.length; i++) {
