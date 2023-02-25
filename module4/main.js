@@ -181,7 +181,6 @@ function getDataEnterprise(name) {
 }
 
 function renderChartEnterprise(data) {
-  console.log(data);
   const dataPoints1 = data.totals.map(item => {
     const element = {};
     element.label = item.year;
