@@ -1,16 +1,24 @@
 // Elementos del HTML
 const personSection = document.querySelector('.person-section');
+const enterpriseSection =  document.querySelector('.enterprise-section');
 
 
 // Creación de elementos HTML
-const personSelect = document.createElement('select');
+const personLabel = document.createElement('label');
+const personInput = document.createElement('input');
+personLabel.innerText = 'Seleccione del las siguientes personas a la cual se le hará el análisis:';
+personInput.setAttribute('list','personList');
+personLabel.append(personInput);
+
+const personDatalist = document.createElement('datalist');
+personDatalist.setAttribute('id', 'personList');
 salarios.forEach(item => {
   const option = document.createElement('option');
   option.innerText = item.name;
   option.value = item.name;
-  personSelect.append(option);
+  personDatalist.append(option);
 });
-personSection.append(personSelect);
+personSection.append(personLabel, personDatalist);
 
 const chartContainer = document.createElement('div');
 chartContainer.setAttribute('id', 'chartContainer');
@@ -18,11 +26,11 @@ chartContainer.classList.add('person-section__chart-container');
 personSection.append(chartContainer);
 
 // Eventos
-personSelect.addEventListener('change', selectPerson);
+personDatalist.addEventListener('input', selectPerson);
 
-//Funciones
+// Funciones
 function selectPerson() {
-  const namePerson = personSelect.value;
+  const namePerson = personDatalist.value;
   const dataPerson = getDataPerson(namePerson);
   renderChartPerson(dataPerson);
 } 
