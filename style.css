@@ -47,6 +47,11 @@ body {
   padding: 10px 0;
   text-align: justify;
 }
+.main__text a {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--terciary);
+}
 .items-container {
   width: 100%;  
   display: grid;
@@ -83,4 +88,23 @@ body {
 .item-container__figure img {
   width: 100%;
   border-bottom: 2px solid var(--primary);
+}
+.item-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background-color: var(--primary-bg);
+  color: var(--secondary);
+  border: none;
+  border-radius: 8px;
+  width: 120px;
+  height: 45px;
+  transition: .3s;
+}
+.item-container a:hover {
+  background-color: var(--secondary);
+  box-shadow: 0 0 0 5px #3d342e5f;
+  color: var(--primary-bg);
+  transform: scaleX(1.1);
 }

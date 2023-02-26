@@ -122,4 +122,5 @@ body {
 }
 .canvasjs-chart-canvas {
   border-radius: 20px;
+  overflow: hidden;
 }
