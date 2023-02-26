@@ -105,7 +105,7 @@ Analisis.enterpriseProjection = function enterpriseProjection(nameEnterprise, me
 
 Analisis.medianGeneral = function medianGeneral() {
   const medianList = salarios.map(
-    item => medianPerPerson(item.name
+    item => this.medianPerPerson(item.name
   ));
   const median = PlatziMath.calculateMedian(medianList);
 
@@ -114,7 +114,7 @@ Analisis.medianGeneral = function medianGeneral() {
 
 Analisis.medianTop10 = function medianTop10() {
   const medianList = salarios.map(
-    item => medianPerPerson(item.name
+    item => this.medianPerPerson(item.name
   )).sort((a,b) => b - a);
 
   const limit = medianList.length * 0.1;

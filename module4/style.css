@@ -1,0 +1,125 @@
+/* Reset initial styles */
+:root {
+  --primary: #1E2630;
+  --secondary: #5E748F;
+  --terciary: #4D5F75;
+  --primary-bg: #91B2DB;
+  --secondary-bg: #677E9C;
+  --white: #fafafa;
+  --black: #0a0a0a;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+  font-family: monospace, sans-serif;
+}
+body {
+  background-color: var(--primary-bg);
+}
+
+/* Main section */
+.main-container {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.6rem;
+  background-color: var(--primary-bg);
+  color: var(--black);
+}
+.main__title {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  background-color: var(--primary-bg);
+  color: var(--primary);
+}
+.main__text {
+  padding: 10px 0;
+  text-align: justify;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px 20px;
+  border-radius: 20px;
+  border-color: var(--secondary);
+  background-color: var(--secondary-bg);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.container__title {
+  padding: 0 10px;
+  border: 0.2rem solid var(--secondary);
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--primary-bg);
+  background-color: var(--primary);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.container__text {
+  padding: 20px 0;
+}
+.container select {
+  background-color: var(--white);
+  border: thin solid var(--secondary);
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin-bottom: 20px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+}
+.container select:focus {
+  background-image:
+    linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    radial-gradient(gray 70%, transparent 72%);
+  background-position:
+    calc(100% - 15px) 1em,
+    calc(100% - 20px) 1em,
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+  border-color: var(--terciary);
+  outline: 0;
+}
+.chart-container {
+  width: 100%;
+  height: 400px;
+}
+.canvasjs-chart-canvas {
+  border-radius: 20px;
+}

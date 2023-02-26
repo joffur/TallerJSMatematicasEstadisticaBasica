@@ -3,6 +3,7 @@
 /*********************************/
 const personSection = document.querySelector('.person-section');
 const enterpriseSection = document.querySelector('.enterprise-section');
+const top10Section = document.querySelector('.top10-section');
 
 /******************************/
 /* Creación de elementos HTML */
@@ -20,7 +21,8 @@ personSection.append(personSelect);
 
 const chartContainer = document.createElement('div');
 chartContainer.setAttribute('id', 'chartContainer');
-chartContainer.classList.add('person-section__chart-container');
+chartContainer.classList.add('person-section__chart-container', 'chart-container');
+chartContainer.classList.add('chart-container');
 personSection.append(chartContainer);
 
 // Empresas
@@ -35,13 +37,25 @@ enterpriseSection.append(enterpriseSelect);
 
 const chartEnterpriseContainer = document.createElement('div');
 chartEnterpriseContainer.setAttribute('id', 'chartEnterpriseContainer');
-chartEnterpriseContainer.classList.add('enterprise-section__chart-container');
+chartEnterpriseContainer.classList.add('enterprise-section__chart-container', 'chart-container');
 enterpriseSection.append(chartEnterpriseContainer);
+
+// Top-10
+
+const chartTop10Container = document.createElement('div');
+chartTop10Container.setAttribute('id', 'chartTop10Container');
+chartTop10Container.classList.add('top10-section__chart-container', 'chart-container');
+top10Section.append(chartTop10Container);
 
 /*****************************/
 /*          Eventos          */
 /*****************************/
 
+window.onload = (event) => {
+  selectPerson();
+  selectEnterprise();
+  drawTop10();
+};
 personSelect.addEventListener('change', selectPerson);
 enterpriseSelect.addEventListener('change', selectEnterprise);
 
@@ -58,7 +72,6 @@ function selectPerson() {
 
 function getDataPerson(name) {
   const data = salarios.find(item => item.name === name);
-  console.log(data);
   data.proyeccion = parseInt(Analisis.personProjection(name));
   data.media = Analisis.medianPerPerson(name);
   return data;
@@ -261,4 +274,64 @@ function renderChartEnterprise(data) {
     }
     chart.render();
   }
+}
+
+// Top-10
+
+function drawTop10 () {
+  const data = salarios.map(item => {
+    const element = {};
+    element.name = item.name;
+    element.median = Analisis.medianPerPerson(item.name);
+    return element;
+  });
+  data.push({name: "Media general", median: Analisis.medianGeneral(), color: "#eb6"});
+  data.push({name: "Media Top 10", median: Analisis.medianTop10(), color: "#B02053" });
+  data.sort((a,b) => a.median - b.median);
+  renderChartTop10(data);
+}
+
+function renderChartTop10(data) {
+  //Construcción del array de las medias de los  salarios
+  const dataPoints = data.map(item => {
+    const element = {};
+    element.label = item.name;
+    element.y = item.median;
+    if (item.color) { element.color = item.color };
+    return element
+  });
+
+  //Agregar los datos a mostrar en la gráfica
+  var chart = new CanvasJS.Chart("chartTop10Container", {
+    animationEnabled: true,
+    theme: "light2",
+    title:{
+      text: "Medias generales y media del Top 10"
+    },	
+    axisY2: {
+      title: "Salario en dólares (USD)",
+      includeZero: true,
+    },
+    axisX: {
+      // title: "Año"
+      interval: 1,
+    },	
+    toolTip: {
+      shared: true
+    },
+    // legend:{
+    //   cursor:"pointer",
+    //   verticalAlign: "bottom",
+    //   itemclick: toogleDataSeries
+    // },
+    data: [{
+      type: "bar",
+      name: "Media del salario anual",
+      color: "#2E8B57",
+      showInLegend: false,
+      axisYType: "secondary", 
+      dataPoints: dataPoints,
+    }]
+  });
+  chart.render();
 }
